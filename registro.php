@@ -1,60 +1,77 @@
-<html lang="en"><head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="files/images/SLMF/favicon.png">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>SLMF</title>
+    <title>Log in</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="dist/css/font-awesome.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="dist/css/signin.css" rel="stylesheet">
+    <link href="dist/css/style.css" rel="stylesheet">
+    <link href="dist/css/style-responsive.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <script src="dist/assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 
 <body>
 
-<div class="container">
+<!-- **********************************************************************************************************************************************************
+MAIN CONTENT
+*********************************************************************************************************************************************************** -->
 
-    <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
-
-</div> <!-- /container -->
+<div id="login-page">
+    <div class="container">
 
 
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="dist/assets/js/ie10-viewport-bug-workaround.js"></script>
+        <form method="POST" action="http://pathofthefood.me/store" accept-charset="UTF-8" class="form-login"><input
+                name="_token" type="hidden" value="DeQavR6nl2sLhqxWTB1JHz9JGt4foOAfrWJbM1t4">
+
+            <h2 class="form-login-heading">
+                <img src="files/images/SLMF/slmf-logo.png" style="max-width:20%;
+		        max-height:100%; position: relative; margin-bottom: 10px;"><br>
+                Acceso al sitio</h2>
+
+            <div class="login-wrap">
+                <input class="form-control" placeholder="Username" id="inputEmail" name="username" type="text">
+                <br>
+                <input class="form-control" placeholder="Password" id="inputPassword" required="required"
+                       name="password" type="password" value="">
+                <br>
+                <input class="btn btn-theme btn-block" type="submit" value="Acceder">
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<!-- js placed at the end of the document so the pages load faster -->
+<script src="dist/js/jquery.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+
+<!--BACKSTRETCH-->
+<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+<script>
+    $.backstretch("assets/img/rest.jpg", {speed: 500});
+</script>
+<script type="text/javascript" src="dist/js/jquery.backstretch.min.js"></script>
+<div class="backstretch"
+     style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 100%; width: 1553px; z-index: -999999; position: fixed;">
+    <img src="files/images/SLMF/unnamed.png"
+         style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1553px; height: 100%; max-width: none; z-index: -999999; left: 0px;">
+</div>
 
 
-</body></html>
-<?php
-/**
- * Created by PhpStorm.
- * User: oscar
- * Date: 21/09/15
- * Time: 03:10 PM
- */
+</body>
+</html>
