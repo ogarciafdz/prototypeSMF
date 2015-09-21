@@ -40,7 +40,7 @@ MAIN CONTENT
             <h2 class="form-login-heading">
                 <img src="files/images/SLMF/slmf-logo.png" style="max-width:20%;
 		        max-height:100%; position: relative; margin-bottom: 10px;"><br>
-                Acceso al sitio</h2>
+                Regista tus datos </h2>
 
             <div class="login-wrap">
                 <input class="form-control" placeholder="Username" id="inputEmail" name="username" type="text">
@@ -48,7 +48,7 @@ MAIN CONTENT
                 <input class="form-control" placeholder="Password" id="inputPassword" required="required"
                        name="password" type="password" value="">
                 <br>
-                <input class="btn btn-theme btn-block" type="submit" value="Acceder">
+                <input class="btn btn-theme btn-block" type="submit" value="Registrame">
             </div>
 
         </form>
