@@ -136,7 +136,7 @@ while($r = mysql_fetch_array($sql)){
                             <p><?php echo $r['description']?></p>
                         </div>
                         <p>
-                            <a href="item.php?id=<?php echo $r['id'];?>" class="btn btn-primary">Buy Now!</a>
+                            <a href="item.php?id=<?php echo $r['id'];?>" class="btn btn-primary">Compralo .!</a>
                         </p>
                     </div>
                 </div>
