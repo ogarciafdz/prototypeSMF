@@ -70,7 +70,7 @@ MAIN CONTENT
 <div class="backstretch"
      style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 100%; width: 1553px; z-index: -999999; position: fixed;">
     <img src="files/images/SLMF/unnamed.png"
-         style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1553px; height: 100%; max-width: none; z-index: -999999; left: 0px;">
+         style="position: fixed; margin: 0px; padding: 0px; border: none; width: 100%; height: 100%; max-width: none; z-index: -999999; left: 0px;">
 </div>
 
 
