@@ -2,14 +2,20 @@
 <html lang="en">
 
 <head>
+    <?php
 
+
+
+
+    ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Item - Start Bootstrap Template</title>
+    <title>SLMF Tienda</title>
+    <link rel="shortcut icon" href="files/images/SLMF/favicon.png"/>
 
     <!-- Bootstrap Core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -39,19 +45,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="#">SLMF</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="index.html">Inico</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="registro.php">Registro</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="tienda.php">Tienda</a>
                     </li>
                 </ul>
             </div>
@@ -66,7 +72,7 @@
         <div class="row">
 
             <div class="col-md-3">
-                <p class="lead">Shop Name</p>
+                <p class="lead">Solo los Mas Fuertes </p>
                 <div class="list-group">
                     <a href="#" class="list-group-item active">Category 1</a>
                     <a href="#" class="list-group-item">Category 2</a>
@@ -77,7 +83,7 @@
             <div class="col-md-9">
 
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+                    <img class="img-responsive" src="files/images/products/creatine_1000grs.png" >
                     <div class="caption-full">
                         <h4 class="pull-right">$24.99</h4>
                         <h4><a href="#">Product Name</a>
