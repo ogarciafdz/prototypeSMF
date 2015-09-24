@@ -6,7 +6,10 @@
     <?php
     include "../files/php/con.php";
 
-    $sql = mysql_query("SELECT * FROM products ORDER BY id")
+    $sql = mysql_query("SELECT * FROM products ORDER BY id");
+
+
+   AES.encrypt();
 
 
     ?>
