@@ -24,6 +24,9 @@ if (!isset($_SESSION['k_username'])) {
 
     <title>SLMF Admin</title>
 
+    <link rel="shortcut icon" href="../files/images/SLMF/favicon.png"/>
+
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 

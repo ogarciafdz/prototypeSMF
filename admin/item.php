@@ -18,7 +18,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>SLMF</title>
+
+    <link rel="shortcut icon" href="../files/images/SLMF/favicon.png"/>
+
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
