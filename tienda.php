@@ -6,8 +6,9 @@
     <?php
     include "files/php/con.php";
 
-    $sql = mysql_query("SELECT * FROM products ORDER BY id")
+    session_start();
 
+    $sql = mysql_query("SELECT * FROM products ORDER BY id");
 
     ?>
 
@@ -49,7 +50,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="#">SLMF</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -60,9 +61,22 @@
                 <li>
                     <a href="tienda.php">Tienda</a>
                 </li>
-                <li>
-                    <a href="admin/login.php">Iniciar Sesion</a>
-                </li>
+                <?php
+
+                if (isset($_SESSION['k_username'])) {?>
+                    <li>
+                        <a href="#">Mi cuenta</a>
+                    </li>
+                    <li>
+                        <a href="files/php/cu.php">Cerrar Sesion</a>
+                    </li>
+
+               <?php }else{
+
+                    echo '  <li><a href="login.php">Iniciar Sesion</a></li>';
+
+                }
+                ?>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -119,28 +133,29 @@
             </div>
 
             <div class="row text-center">
-<?php
+                <?php
 
-while($r = mysql_fetch_array($sql)){
+                while ($r = mysql_fetch_array($sql)) {
 
-?>
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="<?php echo $r['imagepath'] ?>" alt="">
+                    ?>
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="<?php echo $r['imagepath'] ?>" alt="">
 
-                        <div class="caption">
+                            <div class="caption">
 
-                            <h5><a href="item.php?id=<?php echo $r['id'];?>"> <?php echo $r['name']?></a>
-                            </h5>
-                            <h4 > $ <?php echo $r['price']?></h4>
-                            <p><?php echo $r['description']?></p>
+                                <h5><a href="item.php?id=<?php echo $r['id']; ?>"> <?php echo $r['name'] ?></a>
+                                </h5>
+                                <h4> $ <?php echo $r['price'] ?></h4>
+
+                                <p><?php echo $r['description'] ?></p>
+                            </div>
+                            <p>
+                                <a href="item.php?id=<?php echo $r['id']; ?>" class="btn btn-primary">Compralo .!</a>
+                            </p>
                         </div>
-                        <p>
-                            <a href="item.php?id=<?php echo $r['id'];?>" class="btn btn-primary">Compralo .!</a>
-                        </p>
                     </div>
-                </div>
-<?php }?>
+                <?php } ?>
 
             </div>
 
