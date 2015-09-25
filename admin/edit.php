@@ -4,7 +4,6 @@
 <head>
 <?php
 include "../files/php/con.php";
-include('Product.php');
 
 $id = $_GET['id'];
 $producto = mysql_query("SELECT * FROM products WHERE id = $id") or die  (mysql_error());
@@ -292,7 +291,7 @@ $imagepath = mysql_result($producto, 0, 9);
                                     <li hidden><input type="text" name="imagepath" id="file" class="form-control" value="<?php echo $imagepath?>"></li>
                                 </div>
 
-                                <button type="submit" name="submit" class="btn btn-lg btn-success btn-block" value="<?php echo $id?>">Crear Contacto</button>
+                                <button type="submit" name="submit" class="btn btn-lg btn-success btn-block" value="<?php echo $id?>">Editar Producto</button>
 
                             </form>
                         </div>

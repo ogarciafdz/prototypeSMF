@@ -279,7 +279,7 @@
 
                                 </div>
 
-                                <button type="submit" name="submit" class="btn btn-lg btn-success btn-block" value="Upload Image">Crear Contacto</button>
+                                <button type="submit" name="submit" class="btn btn-lg btn-success btn-block" value="Upload Image">Agregar Producto</button>
 
                             </form>
                         </div>

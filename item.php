@@ -3,6 +3,20 @@
 
 <head>
     <?php
+    include "files/php/con.php";
+
+    $id = $_GET['id'];
+    $producto = mysql_query("SELECT * FROM products WHERE id = $id") or die  (mysql_error());
+
+    $name = mysql_result($producto, 0, 1);
+    $desc = mysql_result($producto, 0, 2);
+    $type = mysql_result($producto, 0, 3);
+    $sku = mysql_result($producto, 0, 4);
+    $price = mysql_result($producto, 0, 5);
+    $qty = mysql_result($producto, 0, 6);
+    $vis = mysql_result($producto, 0, 7);
+    $imagepath = mysql_result($producto, 0, 9);
+
 
 
 
@@ -83,20 +97,17 @@
             <div class="col-md-9">
 
                 <div class="thumbnail">
-                    <img class="img-responsive" src="files/images/products/creatine_1000grs.png" >
+                    <img class="img-responsive" src="<?php echo $imagepath?>" >
                     <div class="caption-full">
-                        <h4 class="pull-right">$24.99</h4>
-                        <h4><a href="#">Product Name</a>
+                        <h4 class="pull-right">$<?php echo $price?></h4>
+                        <h4><a href="#"><?php echo $name?></a>
                         </h4>
-                        <p>See more snippets like these online store reviews at <a target="_blank" href="http://bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                        <p>Want to make these reviews work? Check out
-                            <strong><a href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this building a review system tutorial</a>
-                            </strong>over at maxoffsky.com!</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <p><?php echo $desc?></p>
+                        <p>
+                            <a href="item.php?id=<?php echo $id?>" class="btn btn-primary">Compralo .!</a>
+                        </p>
                     </div>
                 </div>
-
-
             </div>
 
         </div>
