@@ -9,7 +9,6 @@ if (trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "") {
     mysql_close($con);
     if ($row = mysql_fetch_array($result)) {
         if ($row["password"] == $password) {
-            echo "exitoso";
             $_SESSION["k_username"] = $row['email'];
             $_SESSION["name"] = $row['name'];
             echo "
@@ -18,7 +17,6 @@ if (trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "") {
 			</SCRIPT>";
 
         } else {
-            echo "traseña";
 
             echo "<SCRIPT LANGUAGE='javascript'>
 			alert('Contraseina incorrecta');
@@ -27,7 +25,6 @@ if (trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "") {
 
         }
     } else {
-        echo "data";
 
         echo "<SCRIPT LANGUAGE='javascript'>
 			alert('Datos no existen en la base de datos');

@@ -73,6 +73,22 @@
                     <li>
                         <a href="tienda.php">Tienda</a>
                     </li>
+                    <?php
+
+                    if (isset($_SESSION['k_username'])) {?>
+                        <li>
+                            <a href="#">Mi cuenta</a>
+                        </li>
+                        <li>
+                            <a href="files/php/cu.php">Cerrar Sesion</a>
+                        </li>
+
+                    <?php }else{
+
+                        echo '  <li><a href="login.php">Iniciar Sesion</a></li>';
+
+                    }
+                    ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -97,7 +113,7 @@
             <div class="col-md-9">
 
                 <div class="thumbnail">
-                    <img class="img-responsive" src="<?php echo $imagepath?>" >
+                    <img class="img-responsive" src="<?php echo $imagepath?>"  style="max-width:50%;">
                     <div class="caption-full">
                         <h4 class="pull-right">$<?php echo $price?></h4>
                         <h4><a href="#"><?php echo $name?></a>

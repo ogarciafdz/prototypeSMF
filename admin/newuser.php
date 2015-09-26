@@ -6,11 +6,9 @@
     <?php
     include "../files/php/con.php";
 
-    $sql = mysql_query("SELECT * FROM products ORDER BY id")
-
+    $sql = mysql_query("SELECT * FROM products ORDER BY id");
 
     ?>
-
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,11 +18,11 @@
 
     <title>SLMF</title>
 
-    <link rel="shortcut icon" href="../files/images/SLMF/favicon.png"/>
-
-
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="../files/images/SLMF/favicon.png"/>
+
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
@@ -168,7 +166,7 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="../files/php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                     </li>
                 </ul>
             </li>
@@ -177,22 +175,22 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li>
-                    <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    <a href="item.php"><i class="fa fa-fw fa-bookmark"></i> Productos</a>
                 </li>
                 <li>
-                    <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                    <a href="#"><i class="fa fa-fw fa-table"></i> Tables</a>
                 </li>
                 <li>
-                    <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                    <a href="#"><i class="fa fa-fw fa-edit"></i> Forms</a>
                 </li>
                 <li>
-                    <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                    <a href="#"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
                 </li>
                 <li>
-                    <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                    <a href="#"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
                 </li>
                 <li>
                     <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i
@@ -207,10 +205,10 @@
                     </ul>
                 </li>
                 <li class="active">
-                    <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                    <a href="#"><i class="fa fa-fw fa-file"></i> Blank Page</a>
                 </li>
                 <li>
-                    <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                    <a href="#"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                 </li>
             </ul>
         </div>
@@ -225,49 +223,53 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Productos
+                        Nuevo Producto
                     </h1>
-
-                    <div class="pull-right">
-                        <form action="new.php">
-                            <button type="submit">Nuevo producto</button>
-                        </form>
-                    </div>
                 </div>
             </div>
             <!-- /.row -->
 
             <div class="row">
-                <?php
+                <div class="col-lg-3 text-center">
 
-                while ($r = mysql_fetch_array($sql)) {
+                </div>
+                <div class="col-lg-6 text-center">
 
-                    ?>
-                    <div class="col-lg-4 ">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Panel title
-                            </div>
-                            <div class="panel-body">
-                                <div class="thumbnail">
-                                    <img src="../<?php echo $r['imagepath'] ?>" alt="">
-
-                                    <div class="caption">
-                                        <h4 class="pull-right"> $ <?php echo $r['price'] ?></h4>
-                                        <h4><a href="edit.php?id=<?php echo $r['id']; ?>"><?php echo $r['name'] ?></a>
-                                        </h4>
-
-                                        <p><?php echo $r['description'] ?></p>
-
-                                        <p>
-                                            <a href="edit.php?id=<?php echo $r['id'];?>" class="btn btn-primary">Editar</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Ingresa el Producto
                         </div>
+                        <div class="panel-body">
+                            <form action="../files/php/upload.php" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="nombre"> Nombre</label>
+                                    <input name="nombre" type="text" id="nombre" class="form-control" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email"> Email</label>
+                                    <input name="email" id="email" type="email" class="form-control" required/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input name="password" type="password" id="password" class="form-control" required/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tel">Telefono</label>
+                                    <input name="tel" id="tel" type="number" class="form-control"/>
+                                </div>
+
+                                <button type="submit" name="submit" class="btn btn-lg btn-success btn-block"
+                                    value="employee">Agregar
+                                </button>
+
+                            </form>
+                        </div>
+                        <!-- /.panel-body -->
                     </div>
-                <?php } ?>
+                </div>
+
             </div>
 
         </div>

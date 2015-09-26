@@ -5,11 +5,11 @@ session_start();
 if (trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "") {
     $usuario = strtolower(htmlentities($_POST["usuario"], ENT_QUOTES));
     $password = $_POST["password"];
+    $password = md5($password);
     $result = mysql_query("SELECT password, email,name FROM employees WHERE email='$usuario'");
     mysql_close($con);
     if ($row = mysql_fetch_array($result)) {
-        if ($row["password"] == $password) {
-            echo "exitoso";
+        if ($password==$row["password"]) {
             $_SESSION["k_username"] = $row['email'];
             $_SESSION["name"] = $row['name'];
             echo "
@@ -18,7 +18,6 @@ if (trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "") {
 			</SCRIPT>";
 
         } else {
-            echo "traseña";
 
             echo "<SCRIPT LANGUAGE='javascript'>
 			alert('Contraseina incorrecta');
@@ -27,7 +26,6 @@ if (trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "") {
 
         }
     } else {
-        echo "data";
 
         echo "<SCRIPT LANGUAGE='javascript'>
 			alert('Datos no existen en la base de datos');

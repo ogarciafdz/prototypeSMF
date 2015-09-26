@@ -17,6 +17,33 @@ $ctn = $_POST['ctn'];
 $visi = $_POST['visi'];
 
 
+//Agrega un usurio
+
+if($_POST['submit']== "employee"){
+
+    $nombre=$_POST['nombre'];
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+
+    $hash = md5($password);
+
+    mysql_query("INSERT INTO `smfprototype`.`employees` (`id`, `name`, `email`, `group`, `phone`, `zip`, `country`,
+                `state`, `created_at`, `password`)
+                VALUES (NULL, '$nombre', '$email', '', '', '', '', '', CURRENT_TIMESTAMP, '$hash');");
+
+
+    echo '<SCRIPT LANGUAGE="javascript">
+        alert("usuario registrado correctamente");
+         </SCRIPT>';
+
+    header("Location: ../../admin/index.php");
+
+}
+
+
+
+
+
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
